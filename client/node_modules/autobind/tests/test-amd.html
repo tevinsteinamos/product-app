@@ -1,0 +1,10 @@
+<script src="bower_components/tester/tester.js"></script>
+<script src="bower_components/requirejs/require.js"></script>
+<script src="../autobind.js"></script>
+<script>
+Tester.assert(typeof autobind === 'undefined', 'MUST NOT define to global scope');
+require(['autobind'], function(autobind) {
+  Tester.assert(typeof autobind === 'function', 'MUST defined with AMD');
+  Tester.feedback(true);
+});
+</script>

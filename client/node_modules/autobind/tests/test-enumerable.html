@@ -1,0 +1,34 @@
+<script src="bower_components/tester/tester.js"></script>
+<script src="../autobind.js"></script>
+<script>
+"use strict";
+var A = function() {};
+Object.defineProperties(A.prototype, {
+  'f': {
+    value: function() {},
+    enumerable: true,
+    writable: true,
+    configurable: true
+  },
+  'g': {
+    value: function() {},
+    enumerable: false,
+    writable: true,
+    configurable: true
+  }
+});
+autobind(A);
+var a = new A();
+
+Tester.assert(Object.getOwnPropertyDescriptor(A.prototype, 'f').enumerable === true);
+Tester.assert(Object.getOwnPropertyDescriptor(A.prototype, 'g').enumerable === false);
+
+// Touch properties and cache into instance
+void a.f;
+void a.g;
+
+Tester.assert(Object.getOwnPropertyDescriptor(a, 'f').enumerable === true);
+Tester.assert(Object.getOwnPropertyDescriptor(a, 'g').enumerable === false);
+
+Tester.feedback(true);
+</script>

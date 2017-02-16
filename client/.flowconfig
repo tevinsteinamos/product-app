@@ -1,0 +1,17 @@
+[ignore]
+# Ignore compiled code.
+<PROJECT_ROOT>/assets/.*
+
+[include]
+
+[libs]
+
+[options]
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+
+module.system=haste
+module.name_mapper='^.+\.css$' -> 'CSSModuleStub'
+
+suppress_type=$FlowIssue
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
