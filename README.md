@@ -2,6 +2,10 @@
 
 A simple product management app using React &amp; Redux 📦
 
+![](http://i.imgur.com/zJi2vTz.gif)
+
+![](http://i.imgur.com/5eWSdKj.gif)
+
 This is my Kodefox's practice for client/server app using:
 - [Node.js 6+](https://nodejs.org/en/ "Node.js 6+")
 - [React](https://facebook.github.io/react/ "React")
